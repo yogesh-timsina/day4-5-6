@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Yogesh Dev Project</title>
+
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #0f2027;
+            color: white;
+            transition: 0.3s;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            color: cyan;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 50px;
+        }
+
+        /* Button */
+        .btn {
+            padding: 10px 20px;
+            background: cyan;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: cyan;
+            box-shadow: 0 0 15px cyan;
+            transform: scale(1.1);
+        }
+
+        /* Cards */
+        .cards {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            flex: 1;
+            padding: 20px;
+            background: rgba(0, 255, 255, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Input */
+        input {
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 10px;
+        }
+
+        #output {
+            margin-top: 15px;
+            color: cyan;
+        }
+
+        /* Animation */
+        .box {
+            width: 50px;
+            height: 50px;
+            background: cyan;
+            margin: 20px auto;
+            animation: move 2s infinite alternate;
+        }
+
+        @keyframes move {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(150px);
+            }
+        }
+
+        /* Dark Mode */
+        .dark {
+            background: white;
+            color: black;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>YogiDev 🚀</h2>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h1 id="title">Welcome to My Project</h1>
+
+        <input type="text" id="name" placeholder="Enter your name"><br>
+
+        <button class="btn" onclick="showName()">Show Name</button>
+        <button class="btn" onclick="toggleMode()">Dark Mode</button>
+
+        <div id="output"></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+        <div class="card">💻 Web Design</div>
+        <div class="card">⚡ JavaScript</div>
+        <div class="card">🚀 Projects</div>
+    </div>
+
+    <!-- Animation -->
+    <div class="box"></div>
+
+    <script>
+        function showName() {
+            let user = document.getElementById("name").value;
+
+            if (user === "") {
+                alert("Enter your name!");
+            } else {
+                document.getElementById("output").innerText = "Hello " + user + " 🔥";
+            }
+        }
+
+        function toggleMode() {
+            document.body.classList.toggle("dark");
+        }
+    </script>
+
+</body>
+
+</html>
